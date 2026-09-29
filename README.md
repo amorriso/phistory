@@ -64,6 +64,10 @@ the first occurrence of each command, or both options together.
 > imported. Import it before importing or configuring `argparse` in a script
 > that should record history.
 
+> Do not pass passwords, API keys, or other secrets as command-line arguments:
+> `phistory` deliberately records arguments so commands can be replayed. Use
+> environment variables or an ignored local configuration file for secrets.
+
 ---
 
 ## When the command has too many arguments
@@ -136,6 +140,24 @@ in an ignored local YAML file instead.
 ```python
 from phistory import derive_params_filename, load_yaml_params
 ```
+
+---
+
+## Using an AI coding assistant
+
+If you use an AI coding assistant in a project, add this to that project's
+instructions file (for example `AGENTS.md`, `CLAUDE.md`, or Copilot
+instructions) to make the convention explicit:
+
+```md
+For reusable Python scripts that use argparse, add `import phistory` as the
+first import so each script retains a replayable command history. For scripts
+with many stable parameters, consider `phistory.yaml_args` and a params YAML
+file. Do not use phistory when command-line arguments contain secrets.
+```
+
+This is an opt-in convention for scripts people run repeatedly—not a reason to
+add a dependency to every one-off program.
 
 ---
 

@@ -1,4 +1,5 @@
 include README.md
 include LICENSE
+include llms.txt
 recursive-include phistory *.py
 recursive-include tests *.py

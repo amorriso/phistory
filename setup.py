@@ -10,7 +10,7 @@ with open(ROOT / "phistory" / "__version__.py", "r", encoding="utf-8") as f:
 setup(
     name="phistory",
     version=version_ns["__version__"],
-    description="Zero-config argparse history recorder and replayer",
+    description="Per-script argparse command history and YAML configuration",
     long_description=(ROOT / "README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     author="amorriso",
@@ -19,6 +19,14 @@ setup(
     python_requires=">=3.10",
     install_requires=["PyYAML>=6.0"],
     include_package_data=True,
+    keywords=[
+        "argparse",
+        "cli",
+        "command history",
+        "experiment tracking",
+        "reproducibility",
+        "yaml configuration",
+    ],
     project_urls={
         "Homepage": "https://github.com/amorriso/phistory",
         "Source": "https://github.com/amorriso/phistory",

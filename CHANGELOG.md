@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented in this file.
 
+## 0.2.2 - 2026-09-30
+
+- Add searchable package keywords and AI-assistant integration guidance.
+
 ## 0.2.1 - 2026-09-30
 
 - Expand the README with script-specific history and version-controlled YAML
