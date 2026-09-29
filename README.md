@@ -1,10 +1,13 @@
-# phistory: Zero-config argparse history + YAML args
+# phistory
 
-**phistory** makes your scripts remember how they were run — and optionally lets you skip argparse entirely using YAML configs.
+`phistory` makes Python scripts remember how they were run, and provides a
+small YAML parameter loader for scripts that do not use `argparse`.
+
+It supports Python 3.10+.
 
 ---
 
-## 🚀 Quickstart
+## Quickstart
 
 ```python
 # myscript.py
@@ -31,7 +34,7 @@ python myscript.py --history
 
 ---
 
-## 🧠 What it does
+## What it does
 
 - Saves each execution’s CLI (`script name + args`) to `~/.python-history/<script>.history`.
 - When run with `--history`, prints previous runs (copy/paste friendly) and exits.
@@ -40,9 +43,16 @@ python myscript.py --history
 
 **History directory:** `~/.python-history/`
 
+Use `--history date` to include timestamps, `--history unique` to show only
+the first occurrence of each command, or both options together.
+
+> `phistory` intentionally monkey-patches `argparse.ArgumentParser` when it is
+> imported. Import it before importing or configuring `argparse` in a script
+> that should record history.
+
 ---
 
-## 🧾 YAML args (no argparse required)
+## YAML args (no argparse required)
 
 Skip `argparse` entirely and just load parameters from YAML.
 
@@ -73,7 +83,7 @@ from phistory import derive_params_filename, load_yaml_params
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 pip install phistory
@@ -81,8 +91,6 @@ pip install phistory
 
 ---
 
-## ⚖️ License
+## License
 
-**Unlicense** — free and unencumbered software released into the public domain.
-
-See <https://unlicense.org> for details.
+MIT. See [LICENSE](LICENSE).
