@@ -5,6 +5,8 @@ small YAML parameter loader for scripts that do not use `argparse`.
 
 It supports Python 3.10+.
 
+Source and issue tracker: <https://github.com/amorriso/phistory>.
+
 ---
 
 ## Quickstart
