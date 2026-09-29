@@ -1,0 +1,14 @@
+name: history
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python>=3.13,<3.14
+  - pip
+  - setuptools
+  # Dependencies that need to be installed via pip
+  - pip:
+      - pylint
+      - PyYAML>=6.0
+      - twine
+      - wheel
