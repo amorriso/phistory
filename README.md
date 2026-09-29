@@ -70,8 +70,9 @@ the first occurrence of each command, or both options together.
 
 For a script with a handful of flags, a command line is great. For a training,
 reporting, or batch job with a dozen settings, it is often easier to keep the
-run configuration in a YAML file. The configuration is readable, reviewable,
-and can be committed beside the code that uses it.
+run configuration in a YAML file. The configuration is readable and
+reviewable. One useful idea: a params file can also be version-controlled with
+your script when you want to keep a reproducible record of a run.
 
 For example, instead of remembering this:
 
@@ -113,9 +114,9 @@ Run it with:
 python train_model.py configs/baseline.params.yaml
 ```
 
-Commit `configs/baseline.params.yaml` when it is a reproducible, non-sensitive
-configuration. Keep credentials, API keys, and machine-specific paths in an
-ignored local YAML file instead.
+You might version-control `configs/baseline.params.yaml` when it represents a
+run worth preserving. Keep credentials, API keys, and machine-specific paths
+in an ignored local YAML file instead.
 
 ### Behavior
 
